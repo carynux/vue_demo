@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>超级马里奥</title>
+    <style>
+        #mario{
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            top:10px;
+            left: 10px;
+        }
+        .warp{
+            width: 500px;
+            height: 400px;
+            background-color: #b6b7b8;
+        }
+        .button{
+            border: 1px solid #0C0C0C;
+            width: 300px;
+            height: 300px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="warp">
+    <img src="./timg.gif" alt="" id="mario">
+</div>
+<div class="button">
+    <input type="button" value="向右移动" onclick="mra_move(1)">
+</div>
+<script>
+    function Mario() {
+        this.x=0;
+        this.y=0;
+        this.move = function (val) {
+            switch(val){
+                case 1:
+                    var ele = document.getElementById("mario");
+                    var left = ele.offsetLeft;
+
+
+                    ele.style.left = (left+20)+"px";
+
+                    break;
+            }
+        }
+    }
+    var mario = new Mario();
+    function mra_move(val) {
+        switch (val){
+            case 1:
+                mario.move(val);
+                break;
+
+        }
+    }
+
+
+
+</script>
+</body>
+</html>
